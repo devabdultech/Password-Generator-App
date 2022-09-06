@@ -1,0 +1,275 @@
+@import url(https://fonts.googleapis.com/css?family=JetBrains+Mono:100,200,300,regular,500,600,700,800,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic);
+
+:root {
+    --text-color: hsl(252, 11%, 91%);
+    --heading: hsl(251, 9%, 53%);
+    --bg: hsl(252, 16%, 6%);
+    --card: hsl(248, 11%, 15%);
+    --accent: hsl(119, 92%, 81%);
+    --too-weak: hsl(0, 91%, 63%);
+    --weak: hsl(13,51%,66%);
+    --medium: hsl(42,91%,68%);
+    --strong: hsl(127,100%,82%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "JetBrains Mono", monospace;
+    background-color: var(--bg);
+    color: var(--text-color);
+}
+
+.container {
+    width: 45%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.3rem;
+    overflow: hidden;
+}
+
+.container > header {
+    color: var(--heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.container .password-input {
+    background-color: var(--card);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .password-input .password {
+    background-color: transparent;
+    border: none;
+    color: hsl(0, 0%, 67%);
+    font-size: 1.7rem;
+    font-weight: 600;
+    width: 85%;
+    padding-left: 1.2rem;
+}
+
+.container .password-input .password-text {
+    display: block;
+    font-size: 1.9rem;
+    color: hsl(0, 0%, 67%);
+}
+
+.container .password-input .copy-password {
+    display: flex;
+    gap: 0.5rem;
+    cursor: pointer;
+    text-align: center;
+    height: 100%;
+    padding: 1.2rem;
+}
+
+.container .password-input .copy-password .copied-text {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--accent);
+    display: none;
+}
+
+.container .password-input .copy-password:hover {
+    background-color: hsl(0 100% 100% / 0.05);
+    filter: brightness(10%) invert(1);
+}
+
+.container .password-input .copy-password > img {
+    width: 1.5rem;
+}
+
+.container .password-props {
+    width: 100%;
+    background-color: var(--card);
+    display: flex;
+    flex-direction: column;
+    gap: 1.35rem;
+    padding: 2rem;
+}
+
+.container .password-props > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .password-props > header h2 {
+    font-size: 1.4rem;
+}
+
+.container .password-props > header p {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.container .password-props .slider-range {
+    width: 100%;
+}
+
+.container .password-props .slider-range > input {
+    width: 100%;
+    cursor: pointer;
+    background-image: var(--accent);
+}
+
+.container .password-props .password-adds {
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+}
+
+.container .password-props .password-adds .checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    width: 1.3rem;
+    height: 1.3rem;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:hover {
+    border-color: var(--accent) ;
+}
+    
+input[type="checkbox"]:checked {
+    background-color: var(--accent);
+    background-image: url(/check.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    border: 0;
+}
+
+.container .error {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    color: hsl(0, 91%, 63%);
+    display: none;
+}
+
+.container .strength-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #191820;
+    padding: 1rem 1.8rem;
+}
+
+.container .strength-container > h1 {
+    text-transform: uppercase;
+    color: var(--heading);
+    font-weight: 500;
+    font-size: 1.2rem;    
+}
+
+.container .strength-container .strength-measure {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+} 
+
+.container .strength-container .strength-measure > h1 {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+}
+
+.container .strength-container .measure-counter {
+    display: flex;
+    gap: 0.5rem;
+    height: 1.8rem;
+}
+
+.container .strength-container .measure-counter .scale-bar {
+    width: 0.6rem;
+    border: 1px solid currentColor;
+}
+
+.container .generate-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    background-color: var(--accent);
+    color: var(--bg);
+    border: none;
+    cursor: pointer;
+}
+
+.container .generate-btn > img {
+    width: 1.4rem;
+}
+
+.container .generate-btn:hover {
+    background-color: transparent;
+    border: 0.15rem solid var(--accent);
+    color: var(--accent);
+}
+
+.container .generate-btn > img path:hover {
+    fill: var(--accent);
+}   
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%; 
+    }  
+
+    .container .password-props {
+        padding: 1.3rem;
+    } 
+
+    .container .strength-container .strength-measure {
+        gap: 0.4rem;
+    }
+
+    .container .strength-container .measure-counter {
+        gap: 0.3rem;
+        height: 1.6rem;
+    }
+
+    .container .strength-container .measure-counter .scale-bar {
+        width: 0.5rem;
+    }
+    
+    .container .password-input .password-text {
+        font-size: 1.3rem;
+    }
+
+    .container .strength-container > h1 {
+        font-size: 1rem;
+    }
+
+    .container .strength-container .strength-measure > h1 {
+        font-size: 0.9rem;
+    }
+}

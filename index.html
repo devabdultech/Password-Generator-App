@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Password Generator App</title>
+</head>
+<body>
+    <div class="container">
+        <header>Password Generator</header>
+
+        <section class="password-input">
+            <div class="password">
+                <div class="password-text" id="passwordOutput">P4$5W0rD</div>
+            </div>
+
+            <span class="copy-password">
+                <span class="copied-text">Copied</span>
+                <img src="/copy.svg" id="copyPassword" alt="copy-password">
+            </span>
+        </section>
+
+        <section class="password-props">
+            <header>
+                <h2>Character length</h2>
+                <p class="range-number" id="rangeNumber"></p>
+            </header>
+
+            <div class="slider-range">
+                <input type="range" min="5" max="18" value="10" id="rangeSlider">
+            </div>
+
+            <div class="password-adds">
+                <label for="uppercase" class="checkbox">
+                    <input type="checkbox" class="check" name="uppercase" id="upperCase" checked>
+                    Include Uppercase Letters
+                </label>
+
+                <label for="lowercase" class="checkbox">
+                    <input type="checkbox" class="check" name="lowercase" id="lowerCase">
+                    Include Lowercase Letters
+                </label>
+
+                <label for="numbers" class="checkbox">
+                    <input type="checkbox" class="check" name="numbers" id="numbers" checked>
+                    Include Numbers
+                </label>
+
+                <label for="symbols" class="checkbox">
+                    <input type="checkbox" class="check" name="symbols" id="symbols">
+                    Include Symbols
+                </label>
+            </div>
+
+            <span class="error">Please kindly select a checkbox above :) </span>
+
+            <div class="strength-container">
+                <h1>Strength</h1>
+
+                <div class="strength-measure">
+                    <h1 id="strengthLevel"></h1>
+
+                    <div class="measure-counter">
+                        <div class="scale-bar"></div>
+                        <div class="scale-bar"></div>
+                        <div class="scale-bar"></div>
+                        <div class="scale-bar"></div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="generate-btn" id="generateBtn">
+                Generate
+                <img src="/arrow.svg" alt="">
+            </button>
+        </section>
+    </div>
+    
+    <script src="/main.js"></script>
+</body>
+</html>
